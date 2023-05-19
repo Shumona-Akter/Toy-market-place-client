@@ -6,6 +6,7 @@ import BannerSection from './Section/BannerSection';
 import Gallery from './Section/Gallery';
 import Catagory from './Section/Catagory/Catagory';
 import Customer from './Section/Customer/Customer';
+import ShoppingTabs from './ShoppingTabs/ShoppingTabs';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
            <BannerSection></BannerSection>
            <Gallery/>
            <Catagory/>
+           <ShoppingTabs></ShoppingTabs>
            <Customer></Customer>
         </>
     );
