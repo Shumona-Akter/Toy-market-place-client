@@ -9,7 +9,6 @@ import Cars from './Cars';
 
 const ShoppingTabs = () => {
 
-  const [loves, setLoves] = useState([])
     return (
        <Container>
         <h1 className='text-center fs-3 text-dark fw-bold'>Shopping Product</h1>

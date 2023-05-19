@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import LovesProduct from '../Section/Customer/LovesProduct';
+import SingleCar from './SingleCar';
 
 const Cars = () => {
     const [car, setCar] = useState([])
-    const url = `http://localhost:3000/love`;
+    const url = `http://localhost:3000/car`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -12,13 +13,13 @@ const Cars = () => {
     }, []);
     return (
         <div>
-            <Row xs={1} md={2} className="g-4">
+            <Row xs={1} md={3} className="g-4">
                 
                     {
-                        car.map(love => <LovesProduct
-                          key={love._id}
-                          love={love}
-                      ></LovesProduct>)
+                        car.map(car => <SingleCar
+                          key={car._id}
+                          car={car}
+                      ></SingleCar>)
                       }
                 
             </Row>
