@@ -5,6 +5,9 @@ import 'react-tabs/style/react-tabs.css';
 import LovesProduct from '../Section/Customer/LovesProduct';
 import Catagory from '../Section/Catagory/Catagory';
 import Cars from './Cars';
+import Track from './Track/Track';
+import PoliceCar from './PoliceCar/PoliceCar';
+// import Track from './Track/Track';
 
 
 const ShoppingTabs = () => {
@@ -17,13 +20,17 @@ const ShoppingTabs = () => {
               <TabList>
                 <Tab>Cars</Tab>
                 <Tab>Truck</Tab>
+                <Tab>Police Car</Tab>
               </TabList>
 
               <TabPanel>
                 <Cars></Cars>
               </TabPanel>
               <TabPanel>
-                <h2>Any content 2</h2>
+                <Track></Track>
+              </TabPanel>
+              <TabPanel>
+                <PoliceCar/>
               </TabPanel>
           </Tabs>
        </Container>

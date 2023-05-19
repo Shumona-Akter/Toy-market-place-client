@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Col, Row } from 'react-bootstrap';
-import LovesProduct from '../Section/Customer/LovesProduct';
-import SingleCar from './SingleCar';
-import SingleTrack from './Track/SingleTrack';
+import { Row } from 'react-bootstrap';
+import SingleTrack from './SingleTrack';
 
-const Cars = () => {
-    const [car, setCar] = useState([])
-    const url = `http://localhost:3000/car`;
+const Track = () => {
+   const [car, setCar] = useState([])
+    const url = `http://localhost:3000/track`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -28,4 +26,4 @@ const Cars = () => {
     );
 };
 
-export default Cars;
+export default Track;
