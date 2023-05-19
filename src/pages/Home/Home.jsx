@@ -6,9 +6,7 @@ import Footer from '../../Shared/Footer/Footer';
 const Home = () => {
     return (
         <>
-           <Navber></Navber>
-           <Outlet></Outlet> 
-           <Footer></Footer>
+           this is home
         </>
     );
 };

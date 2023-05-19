@@ -5,7 +5,7 @@ import { FaFacebook, FaGooglePlusSquare, FaInstagramSquare, FaTwitterSquare } fr
 
 const Footer = () => {
     return (
-        <div className='bg-primary py-5'>
+        <div className='bg-secondary py-5'>
             <Container>
                 <div className="row">
                     <div className="col-md-6">
