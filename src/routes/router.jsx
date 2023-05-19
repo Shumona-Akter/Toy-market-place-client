@@ -4,6 +4,7 @@ import Error from "../pages/ErrorPage/Error";
 import App from "../App";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import Resister from "../pages/Resister/Resister";
+import Blog from "../pages/Blog/Blog";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
         {
           path:"/resister",
           element:<Resister/>
+        },
+        {
+          path:"/blog",
+          element:<Blog/>
         },
       ]
     },
