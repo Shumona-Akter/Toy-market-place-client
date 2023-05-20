@@ -10,8 +10,8 @@ const Navber = () => {
      return <h1>loading...</h1>
    
     }
-    console.log(user.displayName
-      )
+    // console.log(user.displayName
+    //   )
     const handleLogout = ()=>{
       logOut()
       console.log(logOut())

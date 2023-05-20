@@ -6,6 +6,8 @@ import LoginPage from "../pages/LoginPage/LoginPage";
 import Resister from "../pages/Resister/Resister";
 import Blog from "../pages/Blog/Blog";
 import AddProduct from "../pages/AddProducts/AddProduct";
+import PrivateRoute from "./PrivateRoute";
+import AllToys from "../pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
     {
@@ -27,11 +29,17 @@ const router = createBrowserRouter([
         },
         {
           path:"/blog",
-          element:<Blog/>
+          element:<Blog/>,
+          // <PrivateRoute></PrivateRoute>
+        },
+        {
+          path:"/allToys",
+          element:<AllToys/>,
+          loader:()=> fetch("https://toys-car-server-site.vercel.app/addToys")
         },
         {
           path:"/addToys",
-          element:<AddProduct/>
+          element:<PrivateRoute><AddProduct/></PrivateRoute>
         },
       ]
     },

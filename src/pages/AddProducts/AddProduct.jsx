@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { authContext } from '../../Provider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
     const {user} = useContext(authContext)
@@ -10,7 +12,7 @@ const AddProduct = () => {
         event.preventDefault();
 
         const form = event.target;
-        const user_name = user?.user_name;
+        const user_name = user?.displayName;
         const url = form.url.value;
         const product_name = form.product_name.value;
         const catagory = form.catagory.value;
@@ -21,7 +23,7 @@ const AddProduct = () => {
         const email = user?.email;
         
         const addToys = {
-            name, 
+            user_name, 
             email, 
             url,
             product_name, 
@@ -45,6 +47,10 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            if(data.insertedId>0){
+                toast("Product Add Successfully")
+                
+            }
         })
     }   
     return (
