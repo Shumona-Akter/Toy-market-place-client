@@ -5,6 +5,7 @@ import App from "../App";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import Resister from "../pages/Resister/Resister";
 import Blog from "../pages/Blog/Blog";
+import AddProduct from "../pages/AddProducts/AddProduct";
 
 const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
         {
           path:"/blog",
           element:<Blog/>
+        },
+        {
+          path:"/addToys",
+          element:<AddProduct/>
         },
       ]
     },

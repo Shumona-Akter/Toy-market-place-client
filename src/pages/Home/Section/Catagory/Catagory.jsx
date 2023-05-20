@@ -5,7 +5,7 @@ import ImgCatagory from './ImgCatagory';
 const Catagory = () => {
     const [catagoris, setCatagoris] = useState([])
 
-    const url = `http://localhost:3000/catagory`;
+    const url = `https://toys-car-server-site.vercel.app/catagory`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

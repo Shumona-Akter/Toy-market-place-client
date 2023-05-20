@@ -4,7 +4,7 @@ import SingleTrack from './SingleTrack';
 
 const Track = () => {
    const [car, setCar] = useState([])
-    const url = `http://localhost:3000/track`;
+    const url = `https://toys-car-server-site.vercel.app/track`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

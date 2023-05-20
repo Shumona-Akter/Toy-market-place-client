@@ -5,7 +5,7 @@ import LovesProduct from './LovesProduct';
 const Customer = () => {
     const [loves, setLoves] = useState([])
 
-    const url = `http://localhost:3000/love`;
+    const url = `https://toys-car-server-site.vercel.app/love`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())

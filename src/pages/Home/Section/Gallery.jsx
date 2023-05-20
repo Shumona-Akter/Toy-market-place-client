@@ -5,7 +5,7 @@ import GalleryImg from './GalleryImg';
 const Gallery = () => {
     const [gallery, setGalleryImages] = useState([])
 
-    const url = `http://localhost:3000/gallery`;
+    const url = `https://toys-car-server-site.vercel.app/gallery`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
