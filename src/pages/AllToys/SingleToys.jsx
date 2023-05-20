@@ -19,7 +19,7 @@ const SingleToys = ({data}) => {
     console.log(email)
     return (
        <>
-       <tr  className='text-white bg-danger fs-5 my-3'>
+       <tr  className='text-dark  fs-5 my-3'>
             <th className='py-5'>
                 {user_name}
             </th>

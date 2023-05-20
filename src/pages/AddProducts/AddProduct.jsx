@@ -47,14 +47,16 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
-            if(data.insertedId>0){
+            if(data.insertedId){
                 toast("Product Add Successfully")
+                console.log("kskks")
                 
             }
         })
     }   
     return (
        <Container className='border border-secondar my-5 p-5'>
+        <ToastContainer/>
             <h1 className='text-center fs-3 text-dark fw-bold'>Add A Toys</h1>
             <h2 className='text-center fs-6 my-3 pb-5 text-primary '>Please Add</h2>
 
