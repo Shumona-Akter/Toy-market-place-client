@@ -10,6 +10,8 @@ const Navber = () => {
      return <h1>loading...</h1>
    
     }
+    // console.log(user)
+    // console.log(user.photoURL)
     // console.log(user.displayName
     //   )
     const handleLogout = ()=>{

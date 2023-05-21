@@ -7,7 +7,12 @@ const Blog = () => {
     return (
         <Container>
             <h5 className='my-3'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h5>
-            <p>a user with an access token can only access protected resources or perform specific actions for a set period of time, which reduces the risk of the token being compromised. A refresh token allows the user to get a new access token without needing to log in again.</p>
+            <p>Access Token : An access token is a tiny piece of code that contains a large amount of data. Information about the user, permissions, groups, and timeframes is embedded within one token that passes from a server to a user's device. 
+                
+                 <span className='d-block my-3'> Refresh Token : A refresh token allows the user to get a new access token without needing to log in again.</span>
+
+            It is typically stored in memory or a short-lived storage mechanism, such as browser memory (e.g., JavaScript variable) or a local storage. Storing it in an HTTP-only cookie can also provide some protection against cross-site scripting (XSS) attacks.
+            </p>
             <h5 className='my-3'>Compare SQL and NoSQL databases?</h5>
             <p>SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores</p>
             <h5 className='my-3'>What is express js? What is Nest JS ?</h5>
