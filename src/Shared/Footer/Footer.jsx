@@ -29,7 +29,7 @@ const Footer = () => {
                         
                     </div>
                 </div>
-                <p className='text-center fs-5 text-dark mt-3'>Copyright Sumona | Built with Sumona by Team90Degree</p>
+                <p className='text-center fs-5 text-dark mt-3'>&copy; Copyright Sumona | Built with Sumona by Team90Degree</p>
             </Container>
         </div>
     );
