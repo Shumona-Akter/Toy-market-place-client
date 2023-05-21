@@ -10,10 +10,7 @@ const Navber = () => {
      return <h1>loading...</h1>
    
     }
-    // console.log(user)
-    // console.log(user.photoURL)
-    // console.log(user.displayName
-    //   )
+    
     const handleLogout = ()=>{
       logOut()
       console.log(logOut())
@@ -39,26 +36,14 @@ const Navber = () => {
               <NavLink style={{fontSize:"18px", textDecoration:"none", padding:"10px" , fontWeight: "700", fontSize: "20px"}} to="/myToys" className={({ isActive}) => isActive ? "text-primary" : "text-dark" } > My Toys</NavLink>
           
               <NavLink style={{fontSize:"18px", textDecoration:"none", padding:"10px" , fontWeight: "700", fontSize: "20px"}} to="/addToys" className={({ isActive}) => isActive ? "text-primary" : "text-dark" } > Add A Toy</NavLink>
-              <img cd style={{width: '50px' , height : '50px', borderRadius: '50%'}} src={user.photoURL} alt="user" />
+              <img  style={{width: '50px' , height : '50px', borderRadius: '50%'}} className='ms-md-5 me-3' src={user.photoURL} alt="user" />
               <Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white' onClick={handleLogout}>Logout</Link></Button>
             </>:
             <Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
           }
 
-
-          
-          
           </Nav>
-          <div className="d-flex align-items-center text-white">
-           
-            {/* {
-              user?<div className='d-flex gap-3'>
-              <img title={user?.displayName} style={{width: '50px' , height : '50px', borderRadius: '50%'}} src={user.photoURL} alt="user" />
-              <Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white' onClick={handleLogout}>Logout</Link></Button>
-              </div>:<Button className='btn btn-danger'><Link to='/login' className='text-decoration-none text-white'>Login</Link></Button>
-            } */}
-            
-          </div>
+         
         </Navbar.Collapse>
       </Container>
     </Navbar>

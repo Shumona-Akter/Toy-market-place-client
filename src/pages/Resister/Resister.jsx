@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { authContext } from '../../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { updateProfile } from 'firebase/auth';
 
 const Resister = () => {
   document.title = "Kids Dream | Resister"
@@ -43,11 +44,12 @@ const Resister = () => {
         event.target.reset()
         userProfileUpdate(result.user, name, photoUrl)
         navigate(from, {replace: true})
+        console.log(result.user)
        
       })
       .catch(error =>{
         console.log(error.message)
-        setAuthError("Invalid email or Password")
+        // setAuthError("Invalid email or Password")
       } )
 
     
@@ -72,7 +74,7 @@ const Resister = () => {
             <Form onSubmit={handleResister}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Your Name</Form.Label>
-          <Form.Control  type="text" name="name" placeholder="Enter your name" />
+          <Form.Control  type="text" name="name" placeholder="Enter your name" required />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -86,7 +88,7 @@ const Resister = () => {
         <p className="text-danger">{error}</p>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Photo URL</Form.Label>
-          <Form.Control type="text" name="photoUrl" placeholder="Enter Photo URL" />
+          <Form.Control type="text" name="photoUrl" placeholder="Enter Photo URL" required/>
         </Form.Group>
         <Button variant="primary" type="submit">
           Resister
