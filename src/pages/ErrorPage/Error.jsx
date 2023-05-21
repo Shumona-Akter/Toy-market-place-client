@@ -3,6 +3,8 @@ import { Button, Container } from 'react-bootstrap';
 import { Link, useRouteError } from 'react-router-dom';
 
 const Error = () => {
+  document.title = "Kids Dream | Error"
+
     const error = useRouteError();
     console.log(error)
     return (

@@ -1,11 +1,15 @@
 import React, { useContext } from 'react';
-import { Button, Container, Form, ToastContainer } from 'react-bootstrap';
+import { Button, Container, Form } from 'react-bootstrap';
 import { authContext } from '../../Provider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
+// import Swal from 'sweetalert2'
+// import withReactContent from 'sweetalert2-react-content'
 // import { Form } from 'react-router-dom';
 
 const ToysUpdate = () => {
+  document.title = "Kids Dream | Update"
+
   const {user} = useContext(authContext)
     console.log(user)
     const loadData = useLoaderData()
@@ -42,7 +46,7 @@ const ToysUpdate = () => {
             email, 
             url,
             product_name, 
-            price,
+            price : parseInt(price),
             catagory,
             quantity,
             rating,
@@ -61,10 +65,9 @@ const ToysUpdate = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
-            if(data.modifiedCount){
-                toast("Product Add Successfully")
-                console.log("kskks")
-                
+            if(data.modifiedCount > 0){
+               toast("Update Successful....")
+            //    console.log("hello")
             }
         })
     }
@@ -73,7 +76,7 @@ const ToysUpdate = () => {
     return (
       <>
      <Container className='border border-secondar my-5 p-5'>
-        <ToastContainer/>
+        
             <h1 className='text-center fs-3 text-dark fw-bold'>Update A Toys</h1>
             <h2 className='text-center fs-6 my-3 pb-5 text-primary '>Please Add</h2>
 
@@ -94,7 +97,7 @@ const ToysUpdate = () => {
                     <Form.Control  type="email" name='email'defaultValue={user?.email}className='my-3' />
 
                     <Form.Label>Price</Form.Label>
-                    <Form.Control  type="text" name='price' placeholder="Price" defaultValue={price} className='my-3'/>
+                    <Form.Control  type="number" name='price' placeholder="Price" defaultValue={price} className='my-3'/>
                     <Form.Label>Rating</Form.Label>
                     <Form.Control  type="text" name='rating' placeholder="Rating" defaultValue={rating} className='my-3'/>
                     <Form.Label>Available Quantity</Form.Label>
@@ -105,8 +108,9 @@ const ToysUpdate = () => {
                         Update
                     </Button>
             </Form>
-        
+           
        </Container>
+       <ToastContainer/>
       </>
     );
 };

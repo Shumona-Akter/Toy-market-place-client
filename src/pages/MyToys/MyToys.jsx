@@ -6,6 +6,7 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import SingleMyToys from './SingleMyToys';
 
 const MyToys = () => {
+    document.title = "Kids Dream | MyToys"
     const {user} = useContext(authContext)
     const [myToys, setMyToys] = useState([])
     const url = `https://toys-car-server-site.vercel.app/addToys?email=${user.email}`

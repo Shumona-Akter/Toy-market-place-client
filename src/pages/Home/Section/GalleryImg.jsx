@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 const GalleryImg = ({galleryImgages}) => {
-    console.log(galleryImgages)
+    // console.log(galleryImgages)
     return (
         <div>
                   <Col data-aos="fade-up">

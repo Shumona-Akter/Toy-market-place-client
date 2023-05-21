@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const AddProduct = () => {
+    document.title = "Kids Dream | AddToys"
     const {user} = useContext(authContext)
     console.log(user)
 
@@ -27,14 +28,14 @@ const AddProduct = () => {
             email, 
             url,
             product_name, 
-            price,
+            price : parseInt(price),
             catagory,
             quantity,
             rating,
             details
             
         }
-        console.log(addToys)
+        // console.log(addToys)
 
         fetch("https://toys-car-server-site.vercel.app/addToys",{
             method:"POST",
@@ -46,10 +47,10 @@ const AddProduct = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data)
+            // console.log(data)
             if(data.insertedId){
                 toast("Product Add Successfully")
-                console.log("kskks")
+                // console.log("kskks")
                 
             }
         })
@@ -70,14 +71,20 @@ const AddProduct = () => {
                     <Form.Label>Product Name</Form.Label>
                     <Form.Control  type="text" name='product_name' placeholder="Product Name" className='my-3'/>
                     <Form.Label>Sub Category</Form.Label>
-                    <Form.Control  type="text" name='catagory' placeholder="Sub Category" className='my-3'/>
+                    <Form.Select name='catagory' aria-label="Default select example">
+                        <option>Select Catagory</option>
+                        <option value="car">Car</option>
+                        <option value="bus">Bus</option>
+                        <option value="train">Train</option>
+                        <option value="airoplane">Airoplane</option>
+                    </Form.Select>
                 </div>
                 <div className='w-100'>
                     <Form.Label>Seller Email</Form.Label>
                     <Form.Control  type="email" name='email'defaultValue={user?.email}className='my-3' />
 
                     <Form.Label>Price</Form.Label>
-                    <Form.Control  type="text" name='price' placeholder="Price" className='my-3'/>
+                    <Form.Control  type="number" name='price' placeholder="Price" className='my-3'/>
                     <Form.Label>Rating</Form.Label>
                     <Form.Control  type="text" name='rating' placeholder="Rating" className='my-3'/>
                     <Form.Label>Available Quantity</Form.Label>

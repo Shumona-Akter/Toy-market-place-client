@@ -4,6 +4,7 @@ import { authContext } from '../../Provider/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Resister = () => {
+  document.title = "Kids Dream | Resister"
 
     const {signUp,authError,setAuthError, user, setUser} = useContext(authContext)
   const [passwordCheaked, setPasswordCheaked] = useState("")

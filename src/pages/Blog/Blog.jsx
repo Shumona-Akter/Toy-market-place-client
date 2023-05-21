@@ -2,6 +2,8 @@ import React from 'react';
 import { Container } from 'react-bootstrap';
 
 const Blog = () => {
+  document.title = "Kids Dream | Blog"
+
     return (
         <Container>
             <h5 className='my-3'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</h5>

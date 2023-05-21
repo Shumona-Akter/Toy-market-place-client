@@ -13,21 +13,19 @@ const Footer = () => {
                         <img src="https://i.ibb.co/h9RdKdv/download.jpg" style={{width:"50px", marginRight:"20px"}} alt="" />
                         Kids Dream</Link>
                         <div>
-                        <p className='text-white fs-6 mt-3 fw-bold text-decoration-none'><span>Address:</span> Dhaka <span>Mirpur, 2</span> <span>Block H</span></p>
-                        <p className='text-white fs-6 mt-3 fw-bold text-decoration-none'><span>Phone:</span> <span>+88012345678</span></p>
+                        <p className='text-white fs-6 mt-3 text-decoration-none'><span>Address:</span> <span>Mirpur 2, Dhaka </span> <span>Block H</span></p>
+                        <p className='text-white fs-6 mt-3 text-decoration-none'><span>Phone:</span> <span>+88012345678</span></p>
                         
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className='d-none d-md-block'>
-                        <Link to="/" className='text-white d-block fs-5 fw-bold' style={{textDecoration:"none"}}>Home</Link>
-                        <Link to="/" className='text-white d-block fs-5 fw-bold' style={{textDecoration:"none"}}>All toys</Link>
-                        <Link to="/" className='text-white d-block fs-5 fw-bold' style={{textDecoration:"none"}}>Blog</Link>
+                        <Link to="/" className='text-white d-block fs-6 fw-bold' style={{textDecoration:"none"}}>Our Link</Link>
+                        <Link to="/" className='text-white d-block fs-6 ' style={{textDecoration:"none"}}>Home</Link>
+                        <Link to="/allToys" className='text-white d-block fs-6 ' style={{textDecoration:"none"}}>All toys</Link>
+                        <Link to="/blog" className='text-white d-block fs-6 ' style={{textDecoration:"none"}}>Blog</Link>
                         </div>
-                        <Link to="/" className='text-white fs-3 '><FaFacebook/></Link>
-                        <Link to="/" className='text-white fs-3 ms-3'><FaTwitterSquare/></Link>
-                        <Link to="/" className='text-white fs-3 ms-3'><FaInstagramSquare/></Link>
-                        <Link to="/" className='text-white fs-3 ms-3'><FaGooglePlusSquare/></Link>
+                        
                         
                     </div>
                 </div>

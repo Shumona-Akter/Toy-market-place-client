@@ -10,6 +10,7 @@ import ShoppingTabs from './ShoppingTabs/ShoppingTabs';
 import About from './Section/about';
 
 const Home = () => {
+    document.title = "Kids Dream | Home"
     return (
         <>
            <BannerSection></BannerSection>

@@ -6,6 +6,8 @@ import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 
 const ToysDetails = () => {
+  document.title = "Kids Dream | ToysDetails"
+
     const toysDetails = useLoaderData()
     console.log(toysDetails)
     const {

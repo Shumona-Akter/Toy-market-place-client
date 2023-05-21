@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import SingleToys from './SingleToys';
 
 const AllToys = () => {
+  document.title = "Kids Dream | AllToys"
   const loadData = useLoaderData()
 
   const [allData, setallData] = useState(loadData)
@@ -43,12 +44,12 @@ const AllToys = () => {
          <div>
             <h2 >Total Items: {allData.length}</h2>
             <div >
-                <table className="w-100 my-5 p-5 ">
+                <table className="w-100 my-5 p-5 text-center ">
                     {/* head */}
                     <thead className=' py-5  bg-secondary'>
                         <tr className='text-white fs-5'>
                             
-                            <th className='py-5'>Seller</th>
+                            <th className='py-3'>Seller</th>
                             <th>Toy Name</th>
                             <th>Sub-category</th>
                             <th>Price</th>

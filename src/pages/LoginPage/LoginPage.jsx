@@ -5,7 +5,7 @@ import { authContext } from '../../Provider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
 
 const LoginPage = () => {
-
+  document.title = "Kids Dream | Login"
     const {user,signInGoogle,signInGithub, setUser,authError,setAuthError,signIn,} = useContext(authContext)
     const navigate = useNavigate()
     const location = useLocation()
