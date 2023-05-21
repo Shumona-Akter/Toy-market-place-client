@@ -3,7 +3,8 @@
 - using express.js for react backend server
 - authentication with firebase
 - authprovider using context api
-- private route setup chef details
+- using toastify for showing crud operation alert
+- using react awsome component for ratings
 - using database mongo db
 ---
 ## Live Link
