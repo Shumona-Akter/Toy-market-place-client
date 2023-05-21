@@ -1,10 +1,12 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const SingleToys = ({data}) => {
     console.log(data)
     
     const {
+        _id,
         user_name, 
         email, 
         url,
@@ -30,7 +32,9 @@ const SingleToys = ({data}) => {
             <td>${price}</td>
             <td>{quantity}</td>
             <th>
+               <Link to={`/allToys/${_id}`}>
                <Button>View Details</Button>
+               </Link>
             </th>
         </tr>
        </>

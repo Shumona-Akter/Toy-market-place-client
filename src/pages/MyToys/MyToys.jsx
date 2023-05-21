@@ -3,6 +3,7 @@ import { authContext } from '../../Provider/AuthProvider';
 import { Button, Container } from 'react-bootstrap';
 import SingleToys from '../AllToys/SingleToys';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
+import SingleMyToys from './SingleMyToys';
 
 const MyToys = () => {
     const {user} = useContext(authContext)
@@ -14,6 +15,48 @@ const MyToys = () => {
         .then(data =>  setMyToys(data)
         )
     },[])
+
+
+    const handleDelete = id => {
+        const proceed = confirm('Are You sure you want to delete');
+        if (proceed) {
+            fetch(`http://localhost:3000/addToys/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data.deletedCount > 0) {
+                        alert('deleted successful');
+                        const remaining = myToys.filter(toys => toys._id !== id);
+                        setMyToys(remaining);
+                    }
+                })
+        }
+    }
+
+
+    // 
+    const handleBookingConfirm = id => {
+        fetch(`http://localhost:3000/addToys/${id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ status: 'confirm' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    const remaining = myToys.filter(toys => toys._id !== id);
+                    const updated = myToys.find(toys => toys._id === id);
+                    updated.status = 'confirm'
+                    const newmyToys = [updated, ...remaining];
+                    setMyToys(newmyToys);
+                }
+            })
+    }
     return (
         <div>
             <div  style={{background: `url(https://img.freepik.com/free-photo/happy-childhood-vibrant-colors_52683-100297.jpg?t=st=1684569894~exp=1684570494~hmac=8c168a82219fc6229a9653e3f9f0f15d2c233647367ee7c3c0838890c55df69b) no-repeat bottom / cover` , }} className='p-5 mb-5'>
@@ -37,18 +80,23 @@ const MyToys = () => {
                     <thead className=' py-5  bg-secondary'>
                         <tr className='text-white fs-5'>
                             
-                            <th className='py-5'>Seller</th>
-                            <th>Toy Name</th>
-                            <th>Sub-category</th>
-                            <th>Price</th>
-                            <th>Available Quantity</th>
-                            <th>View Details </th>
+                            <th style={{width:"100px"}} className='py-5 text-center'>Photo</th>
+                            <th style={{width:"100px"}} className='py-5 text-center'>Seller</th>
+                            <th style={{width:"100px"}} className='py-5 text-center'>Seller Email</th>
+                            <th className='text-center' style={{width:"100px"}}>Toy Name</th>
+                            <th className='text-center' style={{width:"100px"}}>Sub-category</th>
+                            <th className='text-center' style={{width:"100px"}}>Price</th>
+                            <th className='text-center' style={{width:"100px"}}>Available Quantity</th>
+                            <th className='text-center' style={{width:"100px"}}>Update Status</th>
                         </tr>
                     </thead>
                     <tbody>
                        {
-                        myToys.map(data => <SingleToys key={data._id} 
-                        data= {data}></SingleToys>)
+                        myToys.map(data => <SingleMyToys key={data._id} 
+                        data= {data}
+                        handleDelete={handleDelete}
+                        ></SingleMyToys>)
+                        
                        }
                     </tbody>
 
