@@ -69,9 +69,9 @@ const AddProduct = () => {
                     <Form.Label>Picture URL</Form.Label>
                     <Form.Control  type="text"  name='url' placeholder="Picture URL" className='my-3'/>
                     <Form.Label>Product Name</Form.Label>
-                    <Form.Control  type="text" name='product_name' placeholder="Product Name" className='my-3'/>
+                    <Form.Control  type="text" name='product_name' placeholder="Product Name" className='my-3' required/>
                     <Form.Label>Sub Category</Form.Label>
-                    <Form.Select name='catagory' aria-label="Default select example">
+                    <Form.Select name='catagory' aria-label="Default select example" >
                         <option>Select Catagory</option>
                         <option value="car">Car</option>
                         <option value="bus">Bus</option>
@@ -84,11 +84,11 @@ const AddProduct = () => {
                     <Form.Control  type="email" name='email'defaultValue={user?.email}className='my-3' />
 
                     <Form.Label>Price</Form.Label>
-                    <Form.Control  type="number" name='price' placeholder="Price" className='my-3'/>
+                    <Form.Control  type="number" name='price' placeholder="Price" className='my-3'required/>
                     <Form.Label>Rating</Form.Label>
-                    <Form.Control  type="text" name='rating' placeholder="Rating" className='my-3'/>
+                    <Form.Control  type="text" name='rating' placeholder="Rating" className='my-3' required/>
                     <Form.Label>Available Quantity</Form.Label>
-                    <Form.Control  type="text" name='quantity' placeholder="Available Quantity" className='my-3'/>
+                    <Form.Control  type="text" name='quantity' placeholder="Available Quantity" className='my-3' required/>
                 </div>
                 </div>
                 <Form.Label>Detail Description</Form.Label>
