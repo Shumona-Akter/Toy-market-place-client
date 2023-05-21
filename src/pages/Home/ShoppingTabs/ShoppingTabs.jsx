@@ -26,7 +26,7 @@ const ShoppingTabs = () => {
 
     return (
        <Container>
-        <h1 className='text-center fs-3 text-dark fw-bold'>Shopping Product</h1>
+        <h1 className='text-center fs-3 text-dark fw-bold'>Shopping  Product</h1>
             <h2 className='text-center fs-6 my-3 pb-5 text-primary '>Select Catagory</h2>
             <Tabs>
               <TabList>
