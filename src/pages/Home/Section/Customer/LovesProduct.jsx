@@ -1,9 +1,10 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
+
 const LovesProduct = ({love}) => {
     return (
-        <Col>
+        <Col data-aos="fade-up-right">
                     <Card style={{height: "200px"}}>
                     <Card.Img variant="top" style={{height: "200px"}} src={love.url
                     } />

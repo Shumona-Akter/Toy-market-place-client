@@ -5,7 +5,9 @@ import { RouterProvider } from 'react-router-dom'
 import router from './routes/Router.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AuthProvider from './Provider/AuthProvider'
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(

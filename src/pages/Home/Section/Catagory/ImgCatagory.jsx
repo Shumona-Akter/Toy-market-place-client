@@ -5,7 +5,7 @@ const ImgCatagory = ({catagory}) => {
     console.log(catagory)
     return (
         <div>
-            <Col className='my-5'>
+            <Col data-aos="fade-up" className='my-5'>
                     <div style={{height: "200px"}}>
                     <Image variant="top" style={{height: "200px"}} src={catagory.url
                     } roundedCircle />

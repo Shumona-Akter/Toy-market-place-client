@@ -7,11 +7,13 @@ import Gallery from './Section/Gallery';
 import Catagory from './Section/Catagory/Catagory';
 import Customer from './Section/Customer/Customer';
 import ShoppingTabs from './ShoppingTabs/ShoppingTabs';
+import About from './Section/about';
 
 const Home = () => {
     return (
         <>
            <BannerSection></BannerSection>
+           <About></About>
            <Gallery/>
            <Catagory/>
            <ShoppingTabs></ShoppingTabs>
