@@ -1,11 +1,19 @@
-import React from 'react';
-import { Button, Container } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Button, Container, Form } from 'react-bootstrap';
 import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
 import SingleToys from './SingleToys';
 
 const AllToys = () => {
-  const allData = useLoaderData()
+  const loadData = useLoaderData()
+
+  const [allData, setallData] = useState(loadData)
+  const [searchText, setSearchText] =useState('')
+  const handleSearch = ()=> {
+    console.log(searchText)
+    const search = allData.filter(toy => toy.product_name.toUpperCase() == searchText.toUpperCase())
+    setallData(search)
+  }
   // console.log(allData)
     return (
         <div>
@@ -22,6 +30,16 @@ const AllToys = () => {
          
         </div>
         <Container>
+        <Form className="d-flex">
+            <Form.Control
+            onChange={(e)=> setSearchText(e.target.value)}
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button onClick={handleSearch} variant="outline-success">Search</Button>
+          </Form>
          <div>
             <h2 >Total Items: {allData.length}</h2>
             <div >
